@@ -1,0 +1,21 @@
+{
+  "name": "ptbooks",
+  "version": "1.0.0",
+  "description": "Practise project in front-end development",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "Thao_Le",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "jsonfile": "^2.4.0"
+  }
+}

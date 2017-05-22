@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <title>TheBookLibrary</title>
+    <meta name="description" content="Thao Le website"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Cabin|EB+Garamond" rel="stylesheet">
+    <link rel="stylesheet" href="style-all-together.css" type="text/css" media="all">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+    // jquery UI Tab function
+        $( function() {
+            $( "#tabs" ).tabs({
+                collapsible: true
+                });
+        } );
+    // colapsable nav for mobile 
+       $(document).ready(function(){
+            $('.mobile_menu').on('click', function(){
+                var currentHeight = $('.single-nav').height();
+
+                if(currentHeight < 5){ 
+                    var newHeight = $('.single-nav > ul').height() + 15;
+                    $('.single-nav').animate({'height':newHeight + 'px'}, 750)
+
+
+                }else{
+                    $('.single-nav').animate({'height':'0px'},750, function(){
+                        $(this).removeAttr('style');
+                    });
+
+
+                }
+            });
+
+            $(window).resize(function(){
+                    if( $(this).width()> 599){
+                        $('.single-nav').removeAttr('style');
+                    }
+            });
+// fuction to make the page smooth//
+             $('a[href*="#"]:not([href="#"])').click(function() {
+              if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                  $('html, body').animate({
+                    scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+                }
+              }
+            });
+         })
+    </script>
+
+<!-- image rotate -->
+    <script type="text/javascript">
+           
+        window.onload = function(){           
+        var myImage = document.getElementById("mainImage");
+        setInterval(changeImage,2000);
+
+        var imageArray = ["images/rota1.jpg","images/rota2.jpg","images/rota3.jpg"];
+        var imageIndex = 0;
+
+        function changeImage() {
+         myImage.setAttribute("src",imageArray[imageIndex]);
+         imageIndex++;
+        if (imageIndex >= imageArray.length) {
+        imageIndex = 0;
+            }
+        }
+
+
+    };
+
+
+    </script>
+</head>
+    
+<body>
+   
+<div class="container1">
+
+    <section id="homepage" class="menu-section">
+    <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""></a></div>
+        <nav class="social-nav">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                <li><i class="fa fa-phone" aria-hidden="true"><strong>  012 3456 6589</strong></i></li>
+            </ul>
+        </nav> 
+
+        <nav class="single-nav2">
+        <a href="#" class="mobile_menu" title="menu"></a>
+        </nav>
+             
+        <nav class="single-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book.html">All Books</a></li>
+                <li><a href="#menu">Coming Soon</a></li>
+                <li><a href="#menu">Bestselling</a></li>
+                <li><a href="#mainContact">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    
+
+
+<div class="imageRotate">
+    <img src="images/rota1.jpg" id="mainImage" alt="bookImage" class="articleImage">
+</div>
+    
+    <main id="menu">
+       <h1 class="heading">All Books</h1>
+
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Bestselling</a></li>
+            <li><a href="#tabs-2">Coming Soon</a></li>
+            
+        </ul>
+
+        <div id="tabs-1">
+            <section class="cards">
+            
+                <article class="card">
+
+                    <a class="product-item" href="#">
+                        <img src="images/1.jpg" alt="book">
+                        <div class="card-content">
+                            <h2>10% Happier: How I Tamed the Voice</h2>
+                            <p>Dan Harris</p>
+                        </div><!-- .card-content -->
+                    </a>
+                        
+                </article><!-- .card -->
+
+
+                <article class="card">
+                    <a class="product-item" href="#">
+                        <img src="images/2.jpg" alt="book">
+                        <div class="card-content">
+                            <h2>Overwhelmed: Work, Love, and Play</h2>
+                            <p>Bridgit Schulte</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+                <article class="card">
+                    <a class="product-item" href="#">
+                        <img src="images/3.jpg" alt="book">
+                        <div class="card-content">
+                            <h2>Lifestyle Interventions</h2>
+                            <p>Izabella Wentz</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+            </section><!-- .cards -->
+        </div><!-- #tabs-1 -->
+
+           <br>
+            
+
+
+        <div id="tabs-2">
+            <section class="cards">
+
+
+                <article class="card">
+                    <a class="product-item" href="#">
+                        <img src="images/4.jpg" alt="book">
+                        <div class="card-content">
+                            <h2>Mastering the Skills for Success</h2>
+                            <p>Ulrich Boser</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+                    
+
+                <article class="card">
+                    <a class="product-item" href="#">
+                        <img src="images/5.jpg" alt="book">
+                        <div class="card-content">
+                            <h2>When Good Enough Isn't Enough</h2>
+                            <p>Subir Chowdhury</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+                 <article class="card">
+                    <a class="product-item" href="#">
+                        <img src="images/6.jpg" alt="book">
+                        <div class="card-content">
+                            <h2>Information Technology s</h2>
+                            <p>Henry C. Lucas</p>
+                        </div><!-- .card-content -->
+                    </a>
+                </article><!-- .card -->
+
+            </section><!-- .cards -->
+        </div><!-- #tabs-2 -->
+    </div>
+    <!-- tab -->
+                   
+        <main id="mainContact">
+            <div class="info">
+                <div class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h2>OPENING HOURS</h2>
+                    <p>MON - FRI: 11:00-21:00</p>
+                    <p>SAT - SUN: 12:00-18:00</p>
+                </div>
+            </div>
+            
+
+            <div class="info">
+                <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h2>ADDRESS</h2>
+                    <p>Kitarakuja 3a,00420 Helsinki </p>
+                    
+                </div>
+            </div>
+
+            <div class="info">
+                <div class="icon"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                <div class="text">
+                    <h2>CONTACT</h2>
+                    <p>012 345 6789</p>
+                </div>
+            </div>    
+        </main>     
+         
+
+    <footer class="footer-area">
+        <div id="footerMenu">
+          <h3>Navigation</h3>
+            <ul id="quickNav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#mainContact">Contact</a></li>
+            </ul>
+        </div>
+      
+        <div class="social-media">
+            <h3>Social Media</h3>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        </div>
+    </footer>
+
+    </div><!-- .container -->
+
+    
+    
+
+</body>
+
+</html>
